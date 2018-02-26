@@ -7,7 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
 	
     @RequestMapping("/hello")
-    public String index() {
+    public Object index() {
+    	BodyParam bodyParam = new BodyParam();
+    	bodyParam.setBody("Hello World");
         return "Hello World";
+    }
+    
+    @RequestMapping("/helloBody")
+    public Object helloBody() {
+    	BodyParam bodyParam = new BodyParam();
+    	bodyParam.setBody("Hello Body");
+        return bodyParam;
     }
 }
